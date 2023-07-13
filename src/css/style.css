@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Belanosima&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: #006ba6;
+  color: #ffbc42;
+  font-family: "Belanosima", sans-serif;
+  text-align: center;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.turn {
+  width: 300px;
+  padding: 15px;
+}
+
+.square {
+  border: 1px solid #8bccff;
+  height: 40px;
+  width: 40px;
+  font-weight: bolder;
+  color: white;
+  background-color: #0496ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  grid-template-rows: repeat(10, 40px);
+  border: 3px solid #8bccff;
+}
+.ships-container {
+  text-align: center;
+}
+.ships-container h1 {
+  margin-bottom: 10px;
+}
+.ships {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 350px;
+  width: 350px;
+}
+
+.ship {
+  display: flex;
+  cursor: move;
+  border: 1px solid #8bccff;
+}
+
+.ship .square {
+  border: 1px solid #8bccff;
+}
+
+.popup {
+  position: absolute;
+  top: 10%;
+  background-color: white;
+  padding: 25px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.popup {
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+
+.popup.show {
+  opacity: 1;
+}
+.popup.hide {
+  opacity: 0;
+}
+
+.start-btn {
+  padding: 20px;
+  width: 150px;
+  font-size: larger;
+  border: 2px solid #ffbc42;
+  color: #ffbc42;
+  background-color: transparent;
+}
+.restart-btn {
+  padding: 20px;
+  width: 150px;
+  font-size: larger;
+  border: 2px solid #ffbc42;
+  color: #ffbc42;
+  background-color: #0496ff;
+}
+
+.restart-btn:hover {
+  background-color: #ffbc42;
+  color: #0496ff;
+}
+
+.rotate {
+  padding: 10px;
+  font-size: larger;
+  margin-top: 20px;
+  background-color: transparent;
+  color: #ffbc42;
+  border: 2px solid #ffbc42;
+}
+
+.rotate:hover {
+  background-color: #ffbc42;
+  color: #006ba6;
+}
+
+.game-over {
+  position: absolute;
+  top: 50%;
+  background-color: #0496ff;
+  color: #ffbc42;
+  height: 250px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  transform: translateY(-50%);
+  border-radius: 5px;
+}
+.blur-effect {
+  filter: blur(5px);
+}
